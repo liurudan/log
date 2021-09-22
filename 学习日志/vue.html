@@ -130,6 +130,7 @@
 .inner{
   max-width: 1260px;
     margin: 0 auto;
+    display: flex;
 }
 .left {
     width: 39%;
@@ -142,14 +143,21 @@
 }
 .right{
   width: 61%;
+  display: inline-block;
+    vertical-align: top;
+
 }
 .right>h1{
   font-weight: 300;
     margin: 0;
     font-size: 3.2em;
+    
 }
 .right>p{
   word-spacing: 0.05em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 #hero .button:not(:last-child),
  #news .button:not(:last-child) {
@@ -163,6 +171,53 @@
     min-width: 8em;
     text-align: center;
 }
+a.button, input.button {
+    padding: 0.75em 2em;
+    border-radius: 2em;
+    display: inline-block;
+    color: #fff;
+    background-color: #4fc08d;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+    border: 1px solid #4fc08d;
+}
+a.button.white, input.button.white {
+    background-color: #fff;
+    color: #42b983;
+}
+a.button.gray, input.button.gray {
+    background-color: #f6f6f6;
+    color: #4f5959;
+    border-color: #f6f6f6;
+}
+.special {
+    background-color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.special >h3{
+  font-weight: 600;
+    color: #273849;
+}
+.special a img {
+  margin: 15px 0 0;
+  width: 160px;
+  display: inline-block;
+    vertical-align: middle;
+}
+.special a span{
+  color: #4f5959;
+  margin-left: 20px;
+}
+.highlights{
+  background-color: #fff;
+    padding-bottom: 70px;
+    
+}
+
+
+
 
   </style>
 </head>
@@ -304,16 +359,24 @@
             <p>
               <a href="#" id="modal-player" class="button has-icon">WHY VUE.JS?
               </a>
-              <a href="#" id=""  class="button has-icon"></a>
-              <a href="#" class="button has-icon"></a>
+              <a href="#"   class="button white">开始</a>
+              <a href="#" class="button gray has-icon">GitHub</a>
             </p>
 
 
         </div>
 
       </div>
+      <div class="special">
+        <h3>特别赞助</h3>
+        <a>
+          <img src="../img/hbuilder.png" alt=""><br>
+          <span>Vue 的 IDE</span>
+        </a>
+      </div>
+<div class="highlights">
 
-
+</div>
 
     </div>
     <div class="foot"></div>   
