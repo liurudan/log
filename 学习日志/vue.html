@@ -122,6 +122,47 @@
   border-bottom: 2px solid #42B983;
 
 }
+.centre{
+  display: block;
+  padding: 40px 40px 30px;
+    background-color: #fff;
+}
+.inner{
+  max-width: 1260px;
+    margin: 0 auto;
+}
+.left {
+    width: 39%;
+}
+.hero-logo{
+  width: 215px;
+    height: 215px;
+    float: right;
+    margin-right: 60px;
+}
+.right{
+  width: 61%;
+}
+.right>h1{
+  font-weight: 300;
+    margin: 0;
+    font-size: 3.2em;
+}
+.right>p{
+  word-spacing: 0.05em;
+}
+#hero .button:not(:last-child),
+ #news .button:not(:last-child) {
+    margin-right: 1%;
+}
+#hero .button, #news .button {
+    margin: 1em 0;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    min-width: 8em;
+    text-align: center;
+}
 
   </style>
 </head>
@@ -250,7 +291,31 @@
         </ul>
       </div>
     </div>
-    <div class="centre"></div>
+    <div class="centre">
+      <div class="inner">
+        <div class="left">
+          <img src="../img/logo.svg" alt="" class="hero-logo">
+        </div>
+        <div class="right">
+          <h1>
+            The Progressive<br>
+            JavaScript Framework
+            </h1>
+            <p>
+              <a href="#" id="modal-player" class="button has-icon">WHY VUE.JS?
+              </a>
+              <a href="#" id=""  class="button has-icon"></a>
+              <a href="#" class="button has-icon"></a>
+            </p>
+
+
+        </div>
+
+      </div>
+
+
+
+    </div>
     <div class="foot"></div>   
   </div> 
 </body>
