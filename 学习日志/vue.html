@@ -256,50 +256,52 @@ vertical-align: top;
     filter: grayscale(100%);
     opacity: 0.66;  
 }
+.row:first-child a img{
+   width: 160px;
+}
+.row:nth-child(2) a img{
+  width: 160px;
+}
+.row:nth-child(3) a img{
+  width: 120px;
+}
+.row:nth-child(4) a img{
+  width: 120px;
+}
 .box {
   display: flex;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
 }
 .row{
   flex-basis: 100%;
   display:flex;
   flex-wrap: wrap;
-  align-items: center;
+}
+.row>a{
+ margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 }
 .row:nth-child(1){
   justify-content: center;
-  align-items: center;
-  justify-content: center;
-}
-.row:first-child a img{
-   width: 160px;
-   padding: 0.1em 0.5em;
+  flex:33.3333% 33.3333% 33.3333%;
 }
 .row:nth-child(2){
   justify-content: center;
-  align-items: center;
-}
-.row:nth-child(2) a img{
-  width: 160px;
-  padding: 0.1em 0.5em;
-}
-.row:nth-child(3){
-  justify-content: space-between;
-  align-items: center;
-}
-.row:nth-child(4){
-  justify-content:center;
-  align-items: center;
-}
-.row:nth-child(3) a img{
-  width: 120px;
-  padding-left:1.5em;
-}
-.row:nth-child(4) a img{
-  width: 120px;
-  padding: 0.1em 1.5em;
+  flex:50% 50%;
 }
 
+.row:nth-child(3){
+  justify-content: space-between;
+  flex:25% 25% 25% 25%;
+}
+.row:nth-child(4){
+  justify-content: center;
+  flex:1;
+
+}
   </style>
 </head>
 
@@ -577,13 +579,6 @@ vertical-align: top;
 
 
 </div>
-
-
-
-
-
-
-
 
 
 
