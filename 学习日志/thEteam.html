@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>team</title>
+    <style>
+  *{
+      margin: 0;
+      padding: 0;
+    }
+    ul li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: #304455;
+      cursor: pointer;
+    }
+    .entirety{
+      color:#475050 ; 
+    }
+    .head{
+    background-color: #fff;
+    padding: 10px 30px 10px 60px;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    }
+    .head-logo{
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 40px;
+    color: #273849;
+    font-weight: 500;
+    }
+    .head-logoimg{
+        vertical-align: middle;
+    margin-right: 6px;
+    width: 40px;
+    height: 40px;
+    }
+.nav{ 
+  line-height: 40px;
+  display: flex;
+    flex-flow: row nowrap;
+}
+.nav li{
+    display: inline-block;
+    position: relative;
+    margin: 0 0.6em;
+    }
+    #search-form{
+    display: block;
+    }
+  .nav-input{
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0 15px 0 30px;
+    border: 1px solid #e3e3e3;
+    color: #273849;
+    outline: none;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: border-color 0.2s ease;
+    background: #fff url(../img/sousuo.png) 8px 5px no-repeat;
+    background-size: 20px;
+    vertical-align: middle !important; 
+}
+.nav-linkg{
+  padding-right: 0.8em;
+}
+.nav-link{
+   padding-bottom: 3px;
+    white-space: nowrap;
+}
+.arrow{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-left: 6px;
+    margin-right: -14px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #4f5959;
+}
+
+.nav-dropdown{
+    display: none; 
+    overflow-y: auto;
+    position: absolute;
+    right: -15px;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.nav-linkg:hover .nav-dropdown{
+  display: block;
+}
+.The-document{
+  display: flex;
+  flex-direction:column;
+}
+.The-document h4{
+  margin: 0.43em 0 0;
+}
+.The-document >a{
+  display: block;
+  color: #354c63;
+  line-height: 28px;
+}
+.The-document >a:hover{
+  color: #42B983;
+}
+.line{
+  width: 100%;
+  padding: 10px;
+  opacity: .1;
+  margin-left: -10px;
+  border-bottom: 1px solid #354c63;
+}
+.team:hover{
+  border-bottom: 2px solid #42B983;
+
+}
+.main{
+    border-top: 1px solid #E2E2E2;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="entirety">
+        <!-- 头部 -->
+        <div class="head">
+          <div class="head-logo">
+              <img src="../img/logo.svg" class="head-logoimg">
+            <span>Vue.js</span>
+          </div>
+          <div>
+            <ul class="nav">
+              <li>
+                <form id="search-form">
+                  <input type="text" class="nav-input"> 
+                </form>
+              </li>
+              <!--学习  -->
+                <li class="nav-linkg">
+                  <a  class="nav-link">学习</a>
+                  <span class="arrow"></span>
+                 <div class="nav-dropdown">
+                   <div class="The-document ">
+                     <h4>文档</h4>
+                     <a href="#">指导</a>
+                     <a href="#">应用程序接口</a>
+                     <a href="#">时尚指南</a>
+                     <a href="#">例子</a>
+                     <a href="#">食谱</a>
+                   </div>
+                   <div class="line"></div>
+                   <div class="The-document">
+                    <h4>视频课程</h4>
+                    <a href="#"> Vue 精通</a>
+                    <a href="#"> Vue 学校</a>
+                  </div>
+                 </div>
+              </li>
+              <!-- 生态系统 -->
+              <li class="nav-linkg">
+                <a  class="nav-link">生态系统</a>
+                <span class="arrow"></span>
+               <div class="nav-dropdown">
+                 <div class="The-document ">
+                   <h4>帮助</h4>
+                   <a href="#">论坛</a>
+                   <a href="#">聊天</a>
+                   <a href="#">聚会</a>
+                 </div>
+                 <div class="line"></div>
+                 <div class="The-document">
+                  <h4>工装</h4>
+                  <a href="#">开发工具</a>
+                  <a href="#">命令行界面</a>
+                  <a href="#">Vue 加载器</a>
+                </div>
+                <div class="line"></div>
+                <div class="The-document">
+                 <h4>核心库</h4>
+                 <a href="#">Vue 路由器</a>
+                 <a href="#"> Vuex</a>
+                 <a href="#"> Vue 服务器</a>
+               </div>
+               <div class="line"></div>
+               <div class="The-document">
+                <h4>消息</h4>
+                <a href="#">每周新闻</a>
+                <a href="#">路线图</a>
+                <a href="#">活动</a>
+                <a href="#">推特</a>
+                <a href="#">博客</a>
+                <a href="#">工作</a>
+                <a href="#">开发社区</a>
+              </div>
+               </div>
+            </li>
+              <!-- 团队 -->
+              <li>
+                <a  class="nav-link team">团队</a>
+              </li>
+              <!-- 资源 -->
+              <li class="nav-linkg">
+                <a  class="nav-link">资源</a>
+                <span class="arrow"></span>
+               <div class="nav-dropdown">
+                 <div class="The-document ">
+                   <a href="#">伙伴</a>
+                   <a href="#">主题</a>
+                   <a href="#">很棒的 Vue</a>
+                   <a href="#">浏览 Vue的包</a>
+                 </div>      
+               </div>
+            </li>
+              <!-- 支持Vue -->
+              <li class="nav-linkg">
+                <a  class="nav-link">支持Vue</a>
+                <span class="arrow"></span>
+               <div class="nav-dropdown">
+                 <div class="The-document ">
+                   <a href="#">一次性捐赠</a>
+                   <a href="#">经常性承诺</a>
+                   <a href="#">T恤店</a>
+                 </div>      
+               </div>
+            </li>
+              <!-- 翻译 -->
+              <li class="nav-linkg">
+                <a  class="nav-link">翻译</a>
+                <span class="arrow"></span>
+               <div class="nav-dropdown">
+                 <div class="The-document ">
+                   <a href="#">中文</a>
+                   <a href="#">日本语</a>
+                   <a href="#">Русский</a>
+                   <a href="#">한국어</a>
+                   <a href="#">葡萄牙语</a>
+                   <a href="#">法语</a>
+                   <a href="#">Tiếng Việt</a>
+                   <a href="#">浏览 Vue的包</a>
+                   <a href="#">西班牙语</a>
+                   <a href="#">印尼语</a>
+                 </div>      
+               </div>
+            </li>
+            </ul>
+          </div>
+        </div>
+      <!-- 中间 -->
+      <div class="main">
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+</body>
+</html>
