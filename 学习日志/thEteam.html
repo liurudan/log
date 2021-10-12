@@ -18,6 +18,17 @@
       color: #304455;
       cursor: pointer;
     }
+    h1, h2, h3, h4, strong {
+    font-weight: 600;
+    color: #273849;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
     .entirety{
       color:#475050 ; 
     }
@@ -98,6 +109,7 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-color: #fff;
 }
 .nav-linkg:hover .nav-dropdown{
   display: block;
@@ -130,10 +142,141 @@
 }
 .main{
     border-top: 1px solid #E2E2E2;
+    display: grid;
+    z-index: 1;
+    padding: 0 60px 30px;
+    overflow-x: hidden;
 }
-
-
-
+.sidebar{
+  position: fixed;
+  z-index: 10;
+    top: 61px;
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sidebar-inner{
+  width: 260px;
+    padding: 35px 0px 60px 20px;
+}
+.sidebar-sponsors-special{
+  color: #4f5959;
+    font-size: 0.85em;
+}
+.logoimga{
+  margin-bottom: 20px;
+  margin-top: 18px;
+  color: #4f5959;
+  font-weight: bold;
+    display: block;
+}
+.logoimga>img{
+  width: 125px;
+}
+.sidebar-inner h2{
+  margin-top: 0.2em;
+}
+.version-select{
+  vertical-align: middle;
+    margin-left: 5px;
+}
+.menu-root{
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 20px;
+    line-height: 1.5em;
+}
+.menu-rootLi{
+  margin-top: 20px !important;
+}
+.menu-root li{
+  margin-top: 0.5em;
+  list-style-type: none;
+  line-height: 1.5em;
+}
+.menu-root li a{
+  color: #4f5959;
+  font-size: 12px;
+}
+.menu-root li a:hover{
+ border-bottom: 2px solid #42B983;
+}
+.menu-rootLi{
+  margin-top: 20px;
+}
+@media screen and (min-width: 1300px) {
+  #sidebar-sponsors-platinum-left {
+    display: none;
+  }
+  #sidebar-sponsors-platinum-right {
+    display: block;
+  }
+}
+#sidebar-sponsors-platinum-right {
+  position: fixed;
+  z-index: 19;
+  top: 90px;
+  right: 20px;
+}
+.main-sponsor{
+  color: #4f5959;
+    font-size: 0.85em;
+}
+.main-sponsor>div>a{
+  color: #4f5959;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    width: 125px;
+}
+.main-sponsor>div>a:first-child {
+    margin-top: 18px;
+}
+.main-sponsor>div>a>img{
+  width: 125px;
+}
+.become-backer{
+  border: 1px solid #42b983;
+    border-radius: 2em;
+    display: inline-block;
+    color: #42b983;
+    font-size: 0.8em;
+    width: 125px;
+    padding: 4px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#carbonads{
+  width: 125px;
+    position: fixed;
+    z-index: 19;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+}
+.carbon-wrap{
+  color: #4f5959;
+    display: block;
+}
+.carbon-wrap>a>img{
+  margin-bottom: 4px;
+    font-weight: normal;
+    color: #304455;
+    width: 125px;
+}
+.content{
+  position: relative;
+    padding: 35px 0;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
     </style>
 </head>
 <body>
@@ -263,51 +406,253 @@
         </div>
       <!-- 中间 -->
       <div class="main">
+        <!-- 中左 -->
+        <div class="sidebar">
+        <div class="sidebar-inner">
+          <div class="sidebar-sponsors-special">
+            <span>Special Sponsor 特别赞助机构</span>
+            <div class="logoimga">
+              <img src="../img/hbuilder.png" alt="">
+            </div>
+          </div>
+        <h2>Guide
+          <select class="version-select">
+            <option value="v3">3.x</option>
+            <option value="SELF">2.x</option>
+            <option value="v1">1.0</option>
+            <option value="012">0.12</option>
+            <option value="011">0.11</option>
+          </select>
+        </h2>
+<ul class="menu-root">
+  <li>
+    <h3>Essentials</h3>
+  </li>
+<li class="menu-rootLi">
+  <a href="#">Installation</a>
+</li>
+<li>
+  <a href="#">Introduction</a>
+</li>
+<li>
+  <a href="#">The Vue Instance</a>
+</li>
+<li>
+  <a href="#">Template Syntax</a>
+</li>
+<li>
+  <a href="#">Computed Properties and Watchers</a>
+</li>
+<li>
+  <a href="#">Class and Style Bindings</a>
+</li>
+<li>
+  <a href="#">Conditional Rendering</a>
+</li>
+<li>
+  <a href="#">List Rendering</a>
+</li>
+<li>
+  <a href="#">Event Handling</a>
+</li>
+<li>
+  <a href="#">Form Input Bindings</a>
+</li>
+<li>
+  <a href="#">Components Basics</a>
+</li>
+<li>
+  <h3>Components In-Depth</h3>
+</li>
+<li>
+  <a href="#">Component Registration</a>
+</li>
+<li>
+  <a href="#">Props</a>
+</li>
+<li>
+  <a href="#">Custom Events</a>
+</li>
+<li>
+  <a href="#">Slots</a>
+</li>
+<li>
+  <a href="#">Dynamic & Async Components</a>
+</li>
+<li>
+  <a href="#">Handling Edge Cases</a>
+</li>
+<li>
+  <h3>Transitions & Animation</h3>
+</li>
+<li>
+  <a href="#">Enter/Leave & List Transitions</a>
+</li>
+<li>
+  <a href="#">State Transitions</a>
+</li>
+<li>
+  <h3>Reusability & Composition</h3>
+</li>
+<li>
+  <a href="#">Mixins</a>
+</li>
+<li>
+  <a href="#">Custom Directives</a>
+</li>
+<li>
+  <a href="#">Render Functions & JSX</a>
+</li>
+<li>
+  <a href="#">Plugins</a>
+</li>
+<li>
+  <a href="#">Filters</a>
+</li>
+<li>
+  <h3>Tooling</h3>
+</li>
+<li>
+  <a href="#">Single File Components</a>
+</li>
+<li>
+  <a href="#">Testing</a>
+</li>
+<li>
+  <a href="#">TypeScript Support</a>
+</li>
+<li>
+  <a href="#">Production Deployment</a>
+</li>
+<li>
+  <h3>Scaling Up</h3>
+</li>
+<li>
+  <a href="#">Routing</a>
+</li>
+<li>
+  <a href="#">State Management</a>
+</li>
+<li>
+  <a href="#">Server-Side Rendering</a>
+</li>
+<li>
+  <a href="#">Security</a>
+</li>
+<li>
+  <h3>Internals</h3>
+</li>
+<li>
+  <a href="#">Reactivity in Depth</a>
+</li>
+<li>
+  <h3>Migrating</h3>
+</li>
+<li>
+  <a href="#">Migration from Vue 1.x</a>
+</li>
+<li>
+  <a href="#">Migration from Vue Router 0.7.x</a>
+</li>
+<li>
+  <a href="#">Migration from Vuex 0.6.x to 1.0</a>
+</li>
+<li>
+  <h3>Meta</h3>
+</li>
+<li>
+  <a href="#">Comparison with Other Frameworks</a>
+</li>
+<li>
+  <a href="#">Join the Vue.js Community!</a>
+</li>
+<li>
+  <a href="#">Meet the Team</a>
+</li>
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+        </div>
+        </div>
+        <!-- 中右 -->
+        <div id="sidebar-sponsors-platinum-right">
+          <div class="main-sponsor">
+            <span>Platinum Sponsors</span>
+            <div>
+              <a href="#">
+                <img src="../img/vueschool.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/vehikl.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/retool.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/passionate_people.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/storyblok.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/ionic.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/nuxt.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/das_keyboard.png" alt="">
+              </a>
+            </div>
+<a href="#" class="become-backer">Become a Sponsor</a>
+          </div>
+<div id="carbonads">
+<span>
+  <span class="carbon-wrap">
+<a href="#"><img src="../img/1525189943-38523.png" alt=""></a>
+<a >Limited time offer: Get 10 free Adobe Stock images.</a>
+  </span>
+</span>
+<a href="#">ads via Carbon</a>
+</div>
+        </div>
+        <!-- 中间的中间 -->
+        <div class="content guide with-sidebar team-guide">
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 </body>
 </html>
