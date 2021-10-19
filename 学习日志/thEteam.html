@@ -22,6 +22,13 @@
     font-weight: 600;
     color: #273849;
 }
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 option {
     font-weight: normal;
     display: block;
@@ -144,7 +151,7 @@ option {
     border-top: 1px solid #E2E2E2;
     display: grid;
     z-index: 1;
-    padding: 0 60px 30px;
+    padding: 0 300px 30px;
     overflow-x: hidden;
 }
 .sidebar{
@@ -273,9 +280,152 @@ option {
 .content{
   position: relative;
     padding: 35px 0;
-    max-width: 700px;
+    /* max-width: 700px; */
     margin: 0 auto;
     padding-left: 50px;
+}
+.content p.v3-warning {
+    margin-top: 0;
+}
+.content p.warning {
+    border-left-color: #ffa500;
+}
+.content p.warning:before {
+    background-color: #ffa500;
+}
+.content p.tip:before {
+    content: "!";
+    background-color: #f66;
+}
+.content p.tip, .content p.success {
+    padding: 12px 24px 12px 30px;
+    margin: 2em 0;
+    border-left-width: 4px;
+    border-left-style: solid;
+    background-color: #f8f8f8;
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.content p.tip:before, .content p.success:before {
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+.content p, .content ul, .content ol {
+    line-height: 1.6em;
+    margin: 1.2em 0 -1.2em;
+    padding-bottom: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+.content a {
+    color: #42b983;
+    font-weight: 600;
+}
+.content h2 {
+    margin: 45px 0 0.8em;
+    padding-bottom: 0.7em;
+    border-bottom: 1px solid #ddd;
+}
+.content h2, .content h3 {
+    pointer-events: none;
+}
+.content h2:before, .content h3:before {
+    content: "";
+    display: block;
+    margin-top: -96px;
+    height: 96px;
+    visibility: hidden;
+}
+.sort-by-distance-button {
+     float: right; 
+    /* display: inline-block; */
+    padding: 0.4em 0.7em 0.45em;
+    font-weight: bold;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    line-height: 1;
+    border: none;
+    background: #304455;
+    color: #fff;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 0.3em;
+    
+}
+.content p, .content ul, .content ol {
+    line-height: 1.6em;
+    margin: 1.2em 0 -1.2em;
+    padding-bottom: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+.vuer:first-of-type {
+    margin-top: 15px;
+}
+.vuer {
+    display: flex;
+    padding: 25px 0;
+    border-bottom: 1px dotted #ddd;
+}
+ .vuer .avatar {
+    flex: 0 0 80px;
+}
+.vuer .avatar img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+ .vuer .profile {
+    padding-left: 26px;
+    flex: 1;
+}
+ .vuer .profile h3 {
+    margin: 0;
+    font-size: 1.3em;
+}
+ .vuer .profile dl {
+    margin: 0.6em 0 0;
+}
+ .vuer .profile dt {
+    text-transform: uppercase;
+    font-size: 0.84em;
+    font-weight: 600;
+}
+.vuer .profile dt::after {
+    content: "";
+    margin-right: 7px;
+}
+ .vuer .profile dd {
+    font-weight: 600;
+}
+ .vuer .profile dt, .vuer .profile dd, .vuer .profile ul,  .vuer .profile li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+}
+ .vuer .profile li::after {
+    display: inline-block;
+    content: "·";
+    margin: 0 8px;
+}
+ .vuer .profile dd::after {
+    display: block;
+    content: " ";
+    margin-top: 0.6em;
 }
     </style>
 </head>
@@ -569,29 +719,6 @@ option {
 <li>
   <a href="#">Meet the Team</a>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </ul>
         </div>
         </div>
@@ -639,18 +766,233 @@ option {
         </div>
         <!-- 中间的中间 -->
         <div class="content guide with-sidebar team-guide">
-
-
-
-
-
-
-
-
-
-
-
-
+          <p class="tip warning v3-warning">
+            You’re browsing the documentation for v2.x and earlier.
+            For v3.x, <a>click here.</a></p>
+        <h1>Meet the Team</h1>
+        <h2 id="active-core-team-members">
+          Active Core Team Members
+          <button class="sort-by-distance-button"><span>find near me</span></button>
+          </h2>
+          <p>
+            The development of Vue and its ecosystem is guided by an international team, some of whom have chosen to be featured below.
+          </p>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/499550.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3> Evan You</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/1444526.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3> Linusborg</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/664177.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3> Eduardo</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/2194624.png" alt="">
+              </div>
+              <div class="profile">
+                <h3>Katashin</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/4093559.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3>Michał Sajnóg</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/16508807 (1).jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3>Yosuke Ota</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/3737591.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3>Damian Dulisz</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
+            <div class="vuer">
+              <div class="avatar">
+                <img src="../img/18719025.jpg" alt="">
+              </div>
+              <div class="profile">
+                <h3>Natalia Tepluhina</h3>
+                <dl>
+                  <dt>Core focus</dt>
+                  <dd><ul>
+                    <li><a href="#">vuejs/*</a></li>
+                    <li><a href="#">vuejs-templates/*</a></li>
+                  </ul></dd>
+                  <dt><img src="../img/bao.jpg" alt=""></dt>
+                  <dd>Creator @ Vue.js</dd>
+                  <dt><img src="../img/zuobiao.jpg" alt=""></dt>
+                  <dd>Jersey City, NJ, USA</dd>
+                  <dt><img src="../img/qiu.jpg" alt=""></dt>
+                  <dd class="language-list"><ul><li><span>中文</span></li><li>English</li></ul></dd>
+                  <dt><img src="../img/lian.jpg" alt=""></dt>
+                  <dd><ul><li><a href="#">patreon.com/evanyou</a></li></ul></dd>
+                  <footer>
+                    <a href="#"><img src="../img/gitlogo.jpg" alt=""></a>
+                    <a href="#"><img src="../img/gezi.jpg" alt=""></a>
+                  </footer>
+                </dl>
+              </div>
+            </div>
         </div>
       </div>
         </div>
