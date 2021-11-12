@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>youxi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #304455;
+      cursor: pointer;
+    }
+
+    #outward {
+      width: 92px;
+      height: 92px;
+      margin: 200px auto;
+      border: 1px solid #304455;
+    }
+
+    #ul>li {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      float: left;
+    }
+
+    .li1 {
+      border-bottom: 1px solid #304455;
+      border-right: 1px solid #304455;
+    }
+
+    .li2 {
+      border-bottom: 1px solid #304455;
+      border-right: 1px solid #304455;
+    }
+
+    .li3 {
+      border-bottom: 1px solid #304455;
+    }
+
+    .li4 {
+      border-bottom: 1px solid #304455;
+      border-right: 1px solid #304455;
+    }
+
+    .li5 {
+      border-bottom: 1px solid #304455;
+      border-right: 1px solid #304455;
+    }
+
+    .li6 {
+      border-bottom: 1px solid #304455;
+    }
+
+    .li7 {
+      border-right: 1px solid #304455;
+    }
+
+    .li8 {
+      border-right: 1px solid #304455;
+    }
+    #root{
+      width: 500px;
+    margin-left: 45%;
+    border: 2px solid;
+    height: 400px;
+    } 
+  </style>
+</head>
+
+<body>
+
+  <div id="outward">
+    <ul id="ul">
+      <li class="li1" value="1" ></li>
+      <li class="li2" value="2"></li>
+      <li class="li3" value="3"></li>
+      <li class="li4" value="4"></li>
+      <li class="li5" value="5"></li>
+      <li class="li6" value="6"></li>
+      <li class="li7" value="7"></li>
+      <li class="li8" value="8"></li>
+      <li class="li9" value="9"></li>
+    </ul>
+
+  </div>
+  <div id="root">
+
+  </div>
+
+
+  <!-- 
+    1.构建棋盘，html
+    2.对格子绑定点击事件 js
+    3.处理点击事件
+    a.判断游戏是否终止
+    b.判断当前格子是否可以点击
+    c.显示当前player,innerText
+    d.切换player
+    e.判断输赢
+  -->
+  <script>
+    let clickText = 'X' // 点击填入的字符 默认X
+    let number = 1 // 点击次数
+    let end=false // 判断是否终止游戏
+    let winArr=[[1,2,3],[1,4,7],[1,5,9],[2,5,8],[3,6,9],[3,5,7],[4,5,6],[7,8,9]]
+    // 添加div元素（在内容中）
+    lis = document.getElementsByTagName("li")
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].onclick = function () {
+        if (lis[i].innerText === '' && !end ) { // 当前格子里面内容等于空时，才能填入数据
+          if (number % 2 == 0) //  判断?"偶数":"奇数")
+          {
+            clickText = 'O'
+          } else {
+            clickText = 'X'
+          }
+          lis[i].innerText = clickText
+          number = number + 1
+          let divObj = document.createElement('div');
+          divObj.innerHTML = '显示当前player  '+clickText+',   innerText='+ lis[i].value;
+          // 显示当前player,innerText
+          document.getElementById('root').appendChild(divObj)
+          for (let x = 0; x < winArr.length; x++) {
+            // const [a, b, c] = winArr[x];
+            let a=winArr[x][0]
+            let b=winArr[x][1]
+            let c=winArr[x][2]
+            if (squares(a) && squares(a) === squares(b) && squares(a) === squares(c)) {
+              setTimeout(() => {
+                alert('胜利字符'+squares(a))
+              }, 100);
+              end=true  // 游戏终止
+              return true;
+            }
+          }
+        } else{
+          alert('游戏已经结束')
+        }
+      }
+    }
+    function squares(index) { // 取出传入下标下的填入默认棋子
+      return lis[index-1].innerHTML
+    }
+ </script>
+</body>
+
+</html>
